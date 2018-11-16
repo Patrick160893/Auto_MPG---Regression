@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 from scipy.stats.stats import pearsonr   
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
+from sklearn import linear_model
 
 
 
@@ -47,7 +48,7 @@ def correlation(data):
 
 if __name__ == "__main__":
     
-    file = "/Users/patrickorourke/Desktop/Auto_MPG/auto_mpg_data_original.txt"
+    file = "/Users/patrickorourke/Documents/Auto_MPG/auto_mpg_data_original.txt"
     # Label the columsn of the Pandas DataFrame
     columns = ['mpg', 'cylinders', 'displacement', 'horsepower', 'weight', 'acceleration', 'model year', 'origin', 'car name']
     data = loadData(file,columns)
@@ -142,7 +143,7 @@ if __name__ == "__main__":
     # Good as almost equal to 1
     
     ## The line / model
-    plt.scatter(y_test, y_pred)
+    plt.scatter(y_test, y_pred_test)
     plt.title('Plot of Predicted Values against True Values')
     plt.xlabel('True values')
     plt.ylabel('Predictions')
